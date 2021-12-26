@@ -1,0 +1,19 @@
+h1{
+    color: rgb(0, 26, 255);
+
+}
+
+h2{
+    color: green;
+    font:oblique;
+}
+
+.box1
+{
+    background-color: aqua
+}
+
+.box2
+{
+    background-color: gold;
+}

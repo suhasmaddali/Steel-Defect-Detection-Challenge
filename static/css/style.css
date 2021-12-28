@@ -37,7 +37,12 @@ nav a{
 }
 
 
+main p {
+    font-size: 15px;
+    text-align: center;
+    font-family: arial;
 
+}
 p {
 
 }

@@ -1,24 +1,33 @@
 h1{
     color: rgb(0, 26, 255);
+    text-align: center;
+
+}
+
+p {
 
 }
 
 h2{
     color: green;
     font:oblique;
+    text-align: center;
 }
 
 .box1
 {
     background-color: rgb(21, 182, 182)
+    text-align: center;
 }
 
 .box2
 {
     background-color: gold;
+    text-align: center;
 }
 
 .box3
 {
     background-color: wheat;
+    text-align: center;
 }

@@ -15,4 +15,9 @@ def model_predict(img_path, model):
     x = x / 255
     x = np.expand_dims(x, axis = 0)
     preds = model.predict(x)
-    
+    actual_prediction = np.argmax(preds) + 1
+    return actual_prediction
+
+random_output = model_predict(TRAIN_IMAGE_PATH, model)
+
+print(random_output)

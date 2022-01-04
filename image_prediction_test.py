@@ -20,4 +20,14 @@ def model_predict(img_path, model):
 
 random_output = model_predict(TRAIN_IMAGE_PATH, model)
 
-print(random_output)
+#print(random_output)
+
+
+import os
+from werkzeug.utils import secure_filename
+basepath = os.path.dirname(__file__)
+file_path = os.path.join(basepath, 'uploads', secure_filename('random.py'))
+
+print(file_path)
+
+print(basepath)

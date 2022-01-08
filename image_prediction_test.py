@@ -1,7 +1,9 @@
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
+import os
+from werkzeug.utils import secure_filename
 MODEL_PATH = 'Models/VGG19_weights.h5'
 
 model = load_model(MODEL_PATH)
@@ -22,20 +24,18 @@ random_output = model_predict(TRAIN_IMAGE_PATH, model)
 
 #print(random_output)
 
-@app.route('/', methods = ['GET'])
-def index():
-    return render_template('index.html')
-
-@app.route('/predict', methods = ['GET', 'POST'])
+@app.route('/', methods = ['GET', 'POST'])
 def upload():
     if request.method == 'POST':
-        f = request.files['file']
+        f = request.files["samplefile"]
+        print(f)
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
         predictions = model_predict(file_path, model)
-        result = preds
+        result = predictions
+        print(result)
         return result
-    return none
+    return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

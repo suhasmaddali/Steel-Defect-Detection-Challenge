@@ -14,10 +14,14 @@
 <div class="container">
 <header>
     <h1>Steel Defect Detection</h1>
-    <form action = "/action_page.php">
-        <input type = "file" id="myFile" name = "filename">
-        <input type = "submit">
-    </form>
+    <form action = "{{ url_for("upload") }}" method = "post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name = "samplefile">
+      <button type="submit">Submit</button>
+  </div>
+</form>
+
 </header>
 <nav></nav>
 <main></main>

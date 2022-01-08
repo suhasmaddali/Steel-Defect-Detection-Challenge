@@ -5,6 +5,7 @@ import sklearn
 from imutils import paths
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
+import os
 
 TEST_PATH = '../Steel Defect Detection Dataset/test_images'
 TRAIN_PATH = '../Steel Defect Detection Dataset/train_images'
@@ -26,3 +27,6 @@ y_prediction = pretrained_VGG19_model.predict(img)
 print(y_prediction)
 class_prediction = np.argmax(y_prediction) + 1
 print(class_prediction)
+
+basepath = os.path.dirname(__file__)
+file_path = os.path.join(basepath, 'uploads', secure_filename)

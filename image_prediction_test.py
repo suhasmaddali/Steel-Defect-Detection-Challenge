@@ -1,11 +1,11 @@
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
-
+from flask import Flask, render_template
 MODEL_PATH = 'Models/VGG19_weights.h5'
 
 model = load_model(MODEL_PATH)
-
+app = Flask(__name__)
 # model.summary()
 TRAIN_IMAGE_PATH = '../Steel Defect Detection Dataset/train_images/00f6e702c.jpg'
 
@@ -22,12 +22,20 @@ random_output = model_predict(TRAIN_IMAGE_PATH, model)
 
 #print(random_output)
 
+@app.route('/', methods = ['GET'])
+def index():
+    return render_template('index.html')
 
-import os
-from werkzeug.utils import secure_filename
-basepath = os.path.dirname(__file__)
-file_path = os.path.join(basepath, 'uploads', secure_filename('random.py'))
+@app.route('/predict', methods = ['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        f = request.files['file']
+        basepath = os.path.dirname(__file__)
+        file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
+        predictions = model_predict(file_path, model)
+        result = preds
+        return result
+    return none
 
-print(file_path)
-
-print(basepath)
+if __name__ == '__main__':
+    app.run(debug=True)

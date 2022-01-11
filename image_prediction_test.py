@@ -25,14 +25,18 @@ random_output = model_predict(TRAIN_IMAGE_PATH, model)
 #print(random_output)
 
 @app.route('/', methods = ['GET', 'POST'])
+def index():
+    render_template('index.html')
+
+@app.route('/', methods = ['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         f = request.files["samplefile"]
         basepath = os.path.dirname(__file__)
         print(basepath)
-        file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
+        file_path = os.path.join(basepath, 'uploads')
+        f.save(os.path.join(file_path, secure_filename(f.filename)))
         print(file_path)
-        f.save(file_path)
         predictions = model_predict(file_path, model)
         result = predictions
         #print(result)

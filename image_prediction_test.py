@@ -28,7 +28,7 @@ random_output = model_predict(TRAIN_IMAGE_PATH, model)
 @app.route('/', methods = ['GET', 'POST'])
 def upload():
     if request.method == 'POST':
-        f = request.files["samplefile"]
+        f = request.files["file"]
         basepath = os.path.dirname(__file__)
         print(basepath)
         file_path = os.path.join(basepath, 'uploads')

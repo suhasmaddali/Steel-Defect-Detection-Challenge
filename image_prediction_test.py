@@ -30,10 +30,12 @@ def upload():
         f = request.files["samplefile"]
         print(f)
         basepath = os.path.dirname(__file__)
+        print(basepath)
         file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
         predictions = model_predict(file_path, model)
         result = predictions
         print(result)
+        result = str(result)
         return result
     return render_template("index.html")
 

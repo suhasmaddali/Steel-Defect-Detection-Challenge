@@ -24,9 +24,6 @@ random_output = model_predict(TRAIN_IMAGE_PATH, model)
 
 #print(random_output)
 
-@app.route('/', methods = ['GET', 'POST'])
-def index():
-    render_template('index.html')
 
 @app.route('/', methods = ['GET', 'POST'])
 def upload():

@@ -1,13 +1,18 @@
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
+import sys
 from flask import Flask, render_template, request, url_for
 import os
 from werkzeug.utils import secure_filename
 MODEL_PATH = 'Models/VGG19_weights.h5'
 
 model = load_model(MODEL_PATH)
+
+UPLOAD_FOLDER = 'uploads'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # model.summary()
 TRAIN_IMAGE_PATH = '../Steel Defect Detection Dataset/train_images/00f6e702c.jpg'
 
@@ -25,21 +30,42 @@ random_output = model_predict(TRAIN_IMAGE_PATH, model)
 #print(random_output)
 
 
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
-        f = request.files["file"]
+        # Get the file from post request
+        f = request.files['file']
+
+        # Save the file to ./uploads
         basepath = os.path.dirname(__file__)
-        print(basepath)
-        file_path = os.path.join(basepath, 'uploads')
-        f.save(os.path.join(file_path, secure_filename(f.filename)))
-        print(file_path)
-        predictions = model_predict(file_path, model)
-        result = predictions
-        #print(result)
-        result = str(result)
+        file_path = os.path.join(
+            basepath, 'uploads', secure_filename(f.filename))
+        f.save(file_path)
+
+        # Make prediction
+        preds = model_predict(file_path, model)
+        result=preds
         return result
-    return render_template("index.html")
+    return render_template('index.html')
+
+
+# @app.route('/', methods = ['GET', 'POST'])
+# def upload():
+#     if request.method == 'POST':
+#         f = request.files["file"]
+#         basepath = os.path.dirname(__file__)
+#         print(basepath)
+#         file_path = os.path.join(basepath, 'uploads')
+#         f.save(os.path.join(file_path, secure_filename(f.filename)))
+#         print(file_path)
+#         predictions = model_predict(file_path, model)
+#         result = predictions
+#         print(result)
+        # result = str(result)
+        # return result
+        # return render_template("index.html")
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -10,6 +10,12 @@ Since we are going to be dealing with images, the problem at hand is a Computer 
 
 Let us now go over the project and get a good understanding of the important components respectively. 
 
+## 💻 Training with NVIDIA's RTX 2080 graphics card for Computer Vision Tasks 
+
+1. GPU-accelerated deep learning frameworks offer flexibility to design and train deep neural networks.
+2. With cuDNN and Nvidia's graphics drivers, I was able to train the models really quickly by using GPU cores rather than the CPU cores.
+3. This led to a significant increase in the speed of training and developing convolutional neural networks (CNNs). 
+
 ## 👉 Directions to download the repository and run the notebook 
 
 This is for the Washington Bike Demand Prediction repository. But the same steps could be followed for this repository. 

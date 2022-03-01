@@ -8,7 +8,7 @@ With the help of __machine learning__ and __computer vision__, it is possible to
 <img src = "https://github.com/suhasmaddali/Images/blob/main/jackie-martinez-T96azs3nDK0-unsplash.jpg" width = 750 height = 750/>
 
 ## Computer Vision 
-Since we are going to be dealing with images, the problem at hand is a Computer Vision Problem. In this project, __Convoluted Neural Networks (CNN)__ were used in the process of prediction of defects in the steel. Hyperparameter tuning was done to ensure that proper machine learning insights are generated. We would be first converting those images into the form of vectors so that we are able to give to the machine learning models for prediction respectively. 
+Since we are going to be dealing with images, the problem at hand is a Computer Vision Problem. In this project, __Convolutional Neural Networks (CNN)__ were used in the process of prediction of defects in the steel. Hyperparameter tuning was done to ensure that proper machine learning insights are generated. We would be first converting those images into the form of vectors so that we are able to give to the machine learning models for prediction respectively. 
 
 Let us now go over the project and get a good understanding of the important components respectively. 
 

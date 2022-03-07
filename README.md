@@ -12,7 +12,7 @@ Since we are going to be dealing with images, the problem at hand is a Computer 
 
 ## Outcomes
 
-* __InceptionV3__ Network was able to perform well on the test data with an accuracy of 85% on the data. 
+* __InceptionV3__ Network was able to perform well on the test data with an accuracy of __85%__ on the data. 
 * This model with deployed in real-time with __Flask__, __HTML__ and __CSS__. 
 * An user is able to upload the images and understand the defects in steel. 
 

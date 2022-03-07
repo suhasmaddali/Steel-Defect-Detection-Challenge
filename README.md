@@ -10,6 +10,8 @@ With the help of __machine learning__ and __computer vision__, it is possible to
 ## Computer Vision 
 Since we are going to be dealing with images, the problem at hand is a Computer Vision Problem. In this project, __Convolutional Neural Networks (CNN)__ were used in the process of prediction of defects in the steel. Hyperparameter tuning was done to ensure that proper machine learning insights are generated. We would be first converting those images into the form of vectors so that we are able to give to the machine learning models for prediction respectively. 
 
+## Outcomes
+
 Let us now go over the project and get a good understanding of the important components respectively. 
 
 ## 💻 Training with NVIDIA's RTX 2080 graphics card for Computer Vision Tasks 

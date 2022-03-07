@@ -12,6 +12,10 @@ Since we are going to be dealing with images, the problem at hand is a Computer 
 
 ## Outcomes
 
+* InceptionV3 Network was able to perform well on the test data with an accuracy of 85% on the data. 
+* This model with deployed in real-time with Flask, HTML and CSS. 
+* An user is able to upload the images and understand the defects in steel. 
+
 Let us now go over the project and get a good understanding of the important components respectively. 
 
 ## 💻 Training with NVIDIA's RTX 2080 graphics card for Computer Vision Tasks 

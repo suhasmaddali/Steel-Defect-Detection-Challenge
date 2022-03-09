@@ -16,6 +16,11 @@ Since we are going to be dealing with images, the problem at hand is a Computer 
 * This model with deployed in real-time with __Flask__, __HTML__ and __CSS__. 
 * An user is able to upload the images and understand the defects in steel. 
 
+## Future Scope
+
+* Integrating the best computer vision model to a camera and getting real-time predictions of the defects in steel.
+* Developing a fully-functional webpage that describes the defects in steel. 
+
 Let us now go over the project and get a good understanding of the important components respectively. 
 
 ## 💻 Training with NVIDIA's RTX 2080 graphics card for Computer Vision Tasks 

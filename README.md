@@ -20,6 +20,7 @@ Since we are going to be dealing with images, the problem at hand is a Computer 
 
 * Integrating the best computer vision model to a camera and getting real-time predictions of the defects in steel.
 * Developing a fully-functional webpage that describes the defects in steel. 
+* Improving the accuracy of the models by using other network architectures such as R-CNN, Masked R-CNN and YOLO to initially detect the defects before prediction. 
 
 Let us now go over the project and get a good understanding of the important components respectively. 
 
